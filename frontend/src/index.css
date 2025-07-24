@@ -1,0 +1,122 @@
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(1) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.5) rotate(180deg); }
+}
+
+body.theme-light {
+  --bg-gradient: linear-gradient(135deg, #f8bbd0, #e1bee7);
+  --text-color: #880e4f;
+  --text-muted: #6c757d;
+  --input-bg: #ffffff;
+  --input-border: #f48fb1;
+  --btn-bg-start: #f50057;
+  --btn-bg-end: #c51162;
+  --btn-shadow-color: #f50057;
+}
+
+body.theme-dark {
+  --bg-gradient: linear-gradient(135deg, #3a1a3b, #55185f);
+  --text-color: #f8bbd0;
+  --text-muted: #e1bee7;
+  --input-bg: #4a305d;
+  --input-border: #f06292;
+  --btn-bg-start: #f48fb1;
+  --btn-bg-end: #f06292;
+  --btn-shadow-color: #f48fb1;
+}
+
+body.theme-light, body.theme-dark {
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.btn-pink {
+  color: white !important;
+  background: linear-gradient(45deg, var(--btn-bg-start), var(--btn-bg-end));
+  border: none;
+  border-radius: 30px;
+  padding: 8px 24px;
+  font-weight: 600;
+  box-shadow: 0 0 10px var(--btn-shadow-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-pink:hover,
+.btn-pink:focus {
+  box-shadow: 0 0 20px var(--btn-shadow-color);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.btn-pink-outline {
+  color: var(--btn-bg-start) !important;
+  background: transparent;
+  border: 2px solid var(--btn-bg-start);
+  border-radius: 30px;
+  padding: 6px 22px;
+  font-weight: 600;
+  box-shadow: inset 0 0 10px #fce4ec;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-pink-outline:hover,
+.btn-pink-outline:focus {
+  color: white !important;
+  background: linear-gradient(45deg, var(--btn-bg-start), var(--btn-bg-end));
+  box-shadow: 0 0 20px var(--btn-shadow-color);
+  border-color: transparent;
+  transform: scale(1.05);
+  outline: none;
+}
+
+input.form-control {
+  background-color: var(--input-bg);
+  border: 2px solid var(--input-border);
+  box-shadow: 0 0 8px var(--input-border) inset;
+  color: var(--text-color);
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+input.form-control::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+body.theme-dark a,
+body.theme-light a {
+  color: #f48fb1;
+}
+
+a:hover,
+a:focus {
+  color: #f50057;
+}
+
+/* Containers */
+.container {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.sparkle {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--btn-bg-start);
+  animation: sparkle 1.5s infinite ease-in-out;
+  user-select: none;
+}
+
+/* Utility */
+.text-pink {
+  color: var(--btn-bg-start) !important;
+}
